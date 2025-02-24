@@ -1,51 +1,60 @@
-import React from "react";
-import ContactHeader from "../assets/page-header/contact-header.jpg";
+import React from "react"; 
+import ContactVideo from "../assets/page-header/contact_uss.mp4";
 
 const Contact = () => {
-  document.title = "Contact Page"
+  document.title = "Contact Page";
 
   return (
-    <section className="bg-light-grayish-blue h-auto pt-2 min-h-[80vh]">
-      <div className="max-w-xl sm:max-w-4xl lg:max-w-7xl relative px-5 pt-20 pb-12 items-center mx-auto lg:mx-20 xl:mx-28 2xl:mx-40 3xl:mx-auto lg:pb-2 lg:px-1 xl:px-3 2xl:px-1">
-        <h2 className="product capitalize text-white font-bold text-center relative z-[1] lg:text-left text-3xl sm:text-4xl sm:leading-none pb-3 px-8">
-          Contact
+    <section className="bg-light-grayish-blue h-auto pt-2 min-h-[100vh]">
+      <div className="max-w-xl sm:max-w-4xl lg:max-w-7xl relative px-5 pt-24 pb-12 items-center mx-auto lg:mx-20 xl:mx-28 2xl:mx-40 3xl:mx-auto lg:pb-2 lg:px-1 xl:px-3 2xl:px-1">
+        
+        {/* Contact Header */}
+        <h2 className="text-white font-bold text-center lg:text-left text-4xl sm:text-5xl leading-tight pb-20 relative z-[1]">
+          Contact Us
         </h2>
-        <div className="absolute top-0 left-0 bg-dark-grayish-blue w-full h-48 rounded-md overflow-hidden">
-          <img
-            src={ContactHeader}
-            alt="sneakers on a line"
-            className="opacity-10 absolute h-full w-full object-cover"
-          />
+        <div className="absolute top-0 left-0 w-full h-[400px] rounded-md overflow-hidden bg-dark-grayish-blue">
+          <video autoPlay loop muted className="absolute w-full h-full object-cover">
+            <source src={ContactVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
 
-        <div className="flex mt-32 bg-pale-orange shadow-xl flex-col lg:flex-row max-w-xl lg:max-w-7xl mx-auto mb-32">
-          <div className="other-contact flex-1 lg:mr-6 text-very-dark-blue text-base lg:text-2xl px-3 sm:px-5 lg:px-8 py-4 lg:py-16">
-            <p className="font-bold">Got questions or feedbacks for us?</p>
-            <p className="font-bold">Fill the form here to reach us.</p>
+        {/* Contact Details & Support Info */}
+        <div className="flex flex-col lg:flex-row mt-48 bg-pale-orange shadow-xl rounded-lg mx-auto p-6 sm:p-10 lg:p-12">
+          <div className="text-very-dark-blue text-base lg:text-lg flex-1">
+            
+            {/* Customer Support Section */}
+            <h2 className="text-2xl font-bold mb-4">Customer Support</h2>
+            <p className="mb-2">Our customer support team is available Monday through Friday, 9am to 5pm EST.</p>
+            <p className="mb-6">
+              We strive to respond to all inquiries within 1-2 business days. For urgent matters, please call our support line.
+            </p>
 
-            <ul className="contact-details mt-8 lg:mt-20 text-dark-grayish-blue text-sm lg:text-lg">
-              <li className="w-full flex items-center mb-4">
-                <ion-icon
-                  name="location"
-                  class="text-very-dark-blue"
-                ></ion-icon>
-                <p className="font-bold ml-2 sm:ml-4">
-                 Sole Seekers,{" "}
-                  <span className="font-normal">Kathmandu ,Nepal</span>
-                </p>
+            {/* Contact Information */}
+            <ul className="space-y-4 text-dark-grayish-blue text-sm lg:text-lg">
+              <li className="flex items-center space-x-3">
+                <ion-icon name="location" class="text-very-dark-blue"></ion-icon>
+                <p><strong>Elegance Affair,</strong> Kathmandu, Nepal</p>
               </li>
-              <li className="w-full flex items-center mb-4">
+              <li className="flex items-center space-x-3">
                 <ion-icon name="call" class="text-very-dark-blue"></ion-icon>
-                <p className="ml-2 sm:ml-4">(061)-551252</p>
+                <p>9827111620</p>
               </li>
-              <li className="w-full flex items-center mb-4">
+              <li className="flex items-center space-x-3">
                 <ion-icon name="mail" class="text-very-dark-blue"></ion-icon>
-                <p className="ml-2 sm:ml-4">help@soleseekers.com</p>
+                <p>eleganceaffair@gmail.com</p>
               </li>
             </ul>
+
+            {/* Support Message */}
+            <p className="mt-8 text-lg font-medium leading-relaxed">
+              Have a question, comment, or concern about our products or services? We're here to help. 
+              Feel free to reach out to our team and we'll get back to you as soon as possible.
+            </p>
+
           </div>
-        
         </div>
+
       </div>
     </section>
   );
