@@ -1,76 +1,74 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="text-white bg-very-dark-blue">
-      <div className="wrapper px-5 py-12 lg:py-16 md:px-0 lg:mx-20 xl:mx-28 2xl:mx-40 3xl:mx-auto lg:pb-12 lg:px-1 xl:px-3 2xl:px-1  max-w-xl md:max-w-2xl mx-auto lg:max-w-7xl flex flex-col md:flex-row justify-center lg:justify-between items-center md:items-start">
-        <div className="w-[138px] my-10 md:my-0">
-          <div className="logo">
-            <a href="/" className="cursor-pointer" aria-label="homepage">
-              <h1>Elegance Affair</h1>
-            </a>
-          </div>
-          <div className="social flex justify-between items-center mt-4">
-            <Link to="#" aria-label="facebook">
-              <i className="text-2xl hover:text-orange fab fa-facebook-square"></i>
+    <footer className="bg-black text-white py-14 px-6 md:px-14 rounded-t-2xl w-full">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start">
+        
+        {/* Left Section: Logo & Socials */}
+        <div className="text-center md:text-left">
+          <a href="/" className="text-xl font-bold whitespace-nowrap">
+            Elegance Affair
+          </a>
+          <div className="flex justify-center md:justify-start space-x-4 mt-4">
+            <Link
+              to="https://shorturl.at/b9j9V"
+              target="_blank"
+              className="text-gray-400 hover:text-white transition duration-300"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="h-6 w-6" />
             </Link>
-            <Link to="#" aria-label="youtube">
-              <i className="text-2xl hover:text-orange fab fa-youtube"></i>
+            <Link
+              to="https://github.com/Sushmita67/elegance-main"
+              target="_blank"
+              className="text-gray-400 hover:text-white transition duration-300"
+              aria-label="GitHub"
+            >
+              <FaGithub className="h-6 w-6" />
             </Link>
-            <Link to="#" aria-label="twitter">
-              <i className="text-2xl hover:text-orange fab fa-twitter"></i>
-            </Link>
-            <Link to="#" aria-label="instagram">
-              <i className="text-2xl hover:text-orange fab fa-instagram"></i>
+            <Link
+              to="#"
+              className="text-gray-400 hover:text-white transition duration-300"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="h-6 w-6" />
             </Link>
           </div>
         </div>
-        <nav className="as flex flex-col sm:flex-row -mt-3 mb-10 md:mb-0 sm:px-10">
-          <ul className="px-4">
-            <li className="my-3 hover:text-orange w-fit sm:w-full mx-auto sm:mx-0">
-              <a href="/collections" className="">
-                Collections
-              </a>
+
+        {/* Middle Section: Navigation Links */}
+        <nav className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
+          <ul className="text-center sm:text-left">
+            <li className="mb-2 hover:text-orange">
+              <Link to="/collections">Collections</Link>
             </li>
-            <li className="my-3 hover:text-orange w-fit sm:w-full mx-auto sm:mx-0">
-              <a href="/about-us" className="">
-                About us
-              </a>
+            <li className="mb-2 hover:text-orange">
+              <Link to="/about-us">About us</Link>
             </li>
-            <li className="my-3 hover:text-orange w-fit sm:w-full mx-auto sm:mx-0">
-              <a href="/contact" className="">
-                Contact
-              </a>
+            <li className="hover:text-orange">
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
-          <ul className="px-4">
-            <li className="my-3 hover:text-orange w-fit sm:w-full mx-auto sm:mx-0">
-              <a href="/products" className="">
-                Products
-              </a>
+          <ul className="text-center sm:text-left">
+            <li className="mb-2 hover:text-orange">
+              <Link to="/products">Products</Link>
             </li>
-            <li className="my-3 hover:text-orange w-fit sm:w-full mx-auto sm:mx-0">
-              <a href="/products/men" className="">
-                Men
-              </a>
+            <li className="mb-2 hover:text-orange">
+              <Link to="/products/men">Men</Link>
             </li>
-            <li className="my-3 hover:text-orange w-fit sm:w-full mx-auto sm:mx-0">
-              <a href="/products/women" className="">
-                Women
-              </a>
+            <li className="hover:text-orange">
+              <Link to="/products/women">Women</Link>
             </li>
           </ul>
         </nav>
-        <div className="copyright text-center md:text-left mb-8 md:mb-0">
-          © Copyright 2022{" "}
-          <a
-            href="https://hikmah-yousuph.vercel.app/"
-            className="border-bottom rounded-sm shadow-[inset_0_-1px_0_0_#fff] hover:shadow-[inset_0_-4rem_0_0_#ff7d1a] hover:text-very-dark-blue py-1 transition-all duration-300"
-          >
 
-          </a>{" "}
-          All rights reserved.
+        {/* Right Section: Copyright */}
+        <div className="text-center md:text-left text-sm text-gray-400">
+          <p>© 2025 All Rights Reserved.</p>
+          <p>Emirate Elegance by Sushmita Bishwakarma</p>
         </div>
       </div>
     </footer>
