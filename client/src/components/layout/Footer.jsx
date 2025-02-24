@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="w-[138px] my-10 md:my-0">
           <div className="logo">
             <a href="/" className="cursor-pointer" aria-label="homepage">
-              <h1>Mero jutta</h1>
+              <h1>Elegance Affair</h1>
             </a>
           </div>
           <div className="social flex justify-between items-center mt-4">
