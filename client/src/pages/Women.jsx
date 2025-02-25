@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import WomenHeader from "../assets/page-header/women-header.jpg";
+import WomenHeaderVideo from "../assets/page-header/ringss.mp4"; // Import the video file
 import Filter from "../components/Filter";
 import ProductItem from "../components/home/ProductItem";
 import Loading from "../components/Loading";
@@ -11,7 +11,7 @@ import {
 } from "../redux/reducers/productSlice";
 
 const Women = () => {
-  document.title = "Women's Sneakers"
+  document.title = "Women's Sneakers";
 
   let location = useLocation();
   let gender = location.pathname.split("/")[2];
@@ -41,14 +41,20 @@ const Women = () => {
         <h2 className="product capitalize text-white font-bold text-center relative z-[1] lg:text-left text-3xl sm:text-4xl sm:leading-none pb-3 px-8">
           Women
         </h2>
-        <div className="absolute top-0 left-0 bg-dark-grayish-blue w-full h-48 rounded-md overflow-hidden">
-          <img
-            src={WomenHeader}
-            alt="two women sitting"
-            className="opacity-10 absolute h-full w-full object-cover"
-          />
+        <div className="absolute top-0 left-0 bg-dark-grayish-blue w-full h-96 rounded-md overflow-hidden z-0"> {/* Increased height and z-index */}
+          <video
+            autoPlay
+            loop
+            muted
+            className="opacity-50 absolute h-full w-full object-cover"
+          >
+            <source src={WomenHeaderVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
-        <Filter />
+        <div className="relative z-10 mt-96"> {/* Adjust margin-top and z-index */}
+          <Filter />
+        </div>
         {!error ? (
           <>
             {loading ? (
