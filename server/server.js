@@ -25,6 +25,9 @@ const PORT = process.env.PORT || 5000;
 
 // ROUTES
 
+app.use('/uploads', express.static('uploads')); //Endpoint for Image Location
+
+
 app.use('/api/auth', require("./routes/auth"));
 app.use("/api/users", require("./routes/user"));
 app.use("/api/products", require("./routes/product"));
