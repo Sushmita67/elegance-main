@@ -11,6 +11,24 @@ const User = require("../models/User");
 const dotenv = require("dotenv");
 require("dotenv").config();
 
+const upload = require("../middleware/fileUploads");
+
+const uploadImage = async (req, res, next) => {
+
+
+  if (!req.file) {
+      return res.status(400).send({ message: "Please upload a file" });
+  }
+  res.status(200).json({
+      success: true,
+      data: req.file.filename,
+  });
+}
+
+
+router.post("/uploadImage", upload, uploadImage);
+
+
 
 // @ route    GET api/auth
 // @desc      Get logged in user
