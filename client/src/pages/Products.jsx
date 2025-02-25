@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import aboutHeader from "../assets/page-header/about-header.jpg";
+import aboutHeaderVideo from "../assets/page-header/all-jewelry.mp4"; // Import the video file
 import Filter from "../components/Filter";
 import ProductItem from "../components/home/ProductItem";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,7 +10,7 @@ import {
 } from "../redux/reducers/productSlice";
 
 const Products = () => {
-  document.title = "All Sneakers"
+  document.title = "All Sneakers";
 
   const products = useSelector((state) => state.product.products);
   const loading = useSelector((state) => state.product.loading);
@@ -39,14 +39,20 @@ const Products = () => {
         <h2 className="product capitalize text-white font-bold text-center relative z-[1] lg:text-left text-3xl sm:text-4xl sm:leading-none pb-3 px-8">
           Products
         </h2>
-        <div className="absolute top-0 left-0 bg-dark-grayish-blue w-full h-48 rounded-md overflow-hidden">
-          <img
-            src={aboutHeader}
-            alt="rows of sneakers"
-            className="opacity-10 absolute h-full w-full object-cover"
-          />
+        <div className="absolute top-0 left-0 bg-dark-grayish-blue w-full h-96 rounded-md overflow-hidden z-0"> {/* Increased height and z-index */}
+          <video
+            autoPlay
+            loop
+            muted
+            className="opacity-50 absolute h-full w-full object-cover"
+          >
+            <source src={aboutHeaderVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
-        <Filter />
+        <div className="relative z-10 mt-96"> {/* Adjust margin-top and z-index */}
+          <Filter />
+        </div>
         {!error ? (
           <>
             {loading ? (
