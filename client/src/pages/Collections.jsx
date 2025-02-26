@@ -3,7 +3,7 @@ import CollectionsCards from '../components/collections/CollectionsCards';
 import CollectionsHeaderVideo from '../assets/page-header/ringss.mp4'; // Import the video file
 
 const Collections = () => {
-  document.title = "Jewellery Collections";
+  document.title = "Jewelry Collections";
 
   return (
     <section className='h-auto min-h-[80vh]'>
