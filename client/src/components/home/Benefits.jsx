@@ -14,7 +14,7 @@ const Benefits = () => {
         className="flex flex-col lg:flex-row items-center justify-center"
       >
         <div className="detail px-4 mb-10 flex flex-col items-center text-center lg:text-left lg:items-start">
-          <figure className="bg-pale-black rounded-full w-12 h-12 flex items-center justify-center">
+          <figure className="bg-pale-orange rounded-full w-12 h-12 flex items-center justify-center">
             <img src={shipping} alt="Fast Shipping" className="w-7" />
           </figure>
           <h3 className="text-very-dark-blue font-bold text-xl pt-5 pb-4">
@@ -25,7 +25,7 @@ const Benefits = () => {
           </p>
         </div>
         <div className="detail px-4 mb-10 flex flex-col items-center text-center lg:text-left lg:items-start">
-          <figure className="bg-pale-black rounded-full w-12 h-12 flex items-center justify-center">
+          <figure className="bg-pale-orange rounded-full w-12 h-12 flex items-center justify-center">
             <img src={priceTag} alt="Affordable Prices" className="w-7 mb-1" />
           </figure>
           <h3 className="text-very-dark-blue font-bold text-xl pt-5 pb-4">
@@ -36,7 +36,7 @@ const Benefits = () => {
           </p>
         </div>
         <div className="detail px-4 mb-10 flex flex-col items-center text-center lg:text-left lg:items-start">
-          <figure className="bg-pale-black rounded-full w-12 h-12 flex items-center justify-center">
+          <figure className="bg-pale-orange rounded-full w-12 h-12 flex items-center justify-center">
             <img src={diamond} alt="Premium Quality" className="w-7" />
           </figure>
           <h3 className="text-very-dark-blue font-bold text-xl pt-5 pb-4">
