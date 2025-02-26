@@ -6,10 +6,11 @@ const EditProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState({
+    id: null,
     company: '',
     title: '',
     desc: '',
-    img: '',
+    img: null,
     alt: '',
     categories: [{ color: [], gender: [] }],
     size: [],
@@ -39,6 +40,13 @@ const EditProduct = () => {
     });
   };
 
+  const handleFileChange = (e) => {
+    setProduct({
+      ...product,
+      img: e.target.files[0]
+    });
+  };
+
   const handleSelectChange = (e) => {
     const { name, options } = e.target;
     const selectedOptions = Array.from(options).filter(option => option.selected).map(option => option.value);
@@ -51,21 +59,27 @@ const EditProduct = () => {
     });
   };
 
-  const handleImageUrlChange = (e) => {
-    const { value } = e.target;
-    setProduct({
-      ...product,
-      img: value
-    });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const formData = new FormData();
+    formData.append('company', product.company);
+    formData.append('title', product.title);
+    formData.append('desc', product.desc);
+    if (product.img) {
+      formData.append('picture', product.img);
+    }
+    formData.append('alt', product.alt);
+    formData.append('size', JSON.stringify(product.size));
+    formData.append('price', product.price);
+    formData.append('discountPrice', product.discountPrice);
+    formData.append('categories', JSON.stringify(product.categories));
+
     try {
-      await axios.put(`/api/products/${id}`, product, {
+      await axios.put(`/api/products/${id}`, formData, {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'multipart/form-data'
         }
       });
       alert('Product updated successfully');
@@ -79,13 +93,10 @@ const EditProduct = () => {
     }
   };
 
-  // Ensure categories is defined before accessing its properties
-  const categories = product.categories && product.categories[0] ? product.categories[0] : { color: [], gender: [] };
-
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Edit Product</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+      <h1 className="text-3xl font-bold text-gray-800 mb-6">Edit Product</h1>
+      <form onSubmit={handleSubmit} className="space-y-4" encType="multipart/form-data">
         {errors && (
           <div className="bg-red-100 border border-red-400 text-red-700 p-2 rounded">
             {errors.map((error, index) => (
@@ -93,127 +104,66 @@ const EditProduct = () => {
             ))}
           </div>
         )}
-        <div>
-          <label className="block text-gray-700">Company</label>
-          <input
-            type="text"
-            name="company"
-            value={product.company}
-            onChange={handleChange}
-            className="mt-1 p-2 border border-gray-300 rounded w-full"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-gray-700">Title</label>
-          <input
-            type="text"
-            name="title"
-            value={product.title}
-            onChange={handleChange}
-            className="mt-1 p-2 border border-gray-300 rounded w-full"
-            required
-          />
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-gray-700">Company</label>
+            <input type="text" name="company" value={product.company} onChange={handleChange} className="mt-1 p-2 border border-gray-300 rounded w-full" required />
+          </div>
+          <div>
+            <label className="block text-gray-700">Title</label>
+            <input type="text" name="title" value={product.title} onChange={handleChange} className="mt-1 p-2 border border-gray-300 rounded w-full" required />
+          </div>
         </div>
         <div>
           <label className="block text-gray-700">Description</label>
-          <textarea
-            name="desc"
-            value={product.desc}
-            onChange={handleChange}
-            className="mt-1 p-2 border border-gray-300 rounded w-full"
-            required
-          />
+          <textarea name="desc" value={product.desc} onChange={handleChange} className="mt-1 p-2 border border-gray-300 rounded w-full" required />
         </div>
         <div>
-          <label className="block text-gray-700">Image URL</label>
-          <input
-            type="text"
-            name="img"
-            onChange={handleImageUrlChange}
-            value={product.img}
-            className="mt-1 p-2 border border-gray-300 rounded w-full"
-          />
+          <label className="block text-gray-700">Upload Image</label>
+          <input type="file" name="picture" onChange={handleFileChange} className="mt-1 p-2 border border-gray-300 rounded w-full" accept="image/*" />
         </div>
         <div>
           <label className="block text-gray-700">Alternative Text</label>
-          <input
-            type="text"
-            name="alt"
-            value={product.alt}
-            onChange={handleChange}
-            className="mt-1 p-2 border border-gray-300 rounded w-full"
-            required
-          />
+          <input type="text" name="alt" value={product.alt} onChange={handleChange} className="mt-1 p-2 border border-gray-300 rounded w-full" required />
         </div>
-        <div>
-          <label className="block text-gray-700">Categories</label>
-          <div className="flex space-x-4">
-            <div>
-              <label className="block text-gray-700">Colors</label>
-              <select
-                name="color"
-                multiple
-                onChange={handleSelectChange}
-                className="mt-1 p-2 border border-gray-300 rounded w-full"
-                value={categories.color}
-              >
-                <option value="red">Red</option>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-gray-700">Gender/Type</label>
-              <select
-                name="gender"
-                multiple
-                onChange={handleSelectChange}
-                className="mt-1 p-2 border border-gray-300 rounded w-full"
-                value={categories.gender}
-              >
-                <option value="men">Men</option>
-                <option value="women">Women</option>
-              </select>
-            </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-gray-700">Categories</label>
+            <select name="type" multiple onChange={handleSelectChange} className="mt-1 p-2 border border-gray-300 rounded w-full">
+              <option value="earrings">Earrings</option>
+              <option value="necklace">Necklace</option>
+              <option value="bracelets">Bracelets</option>
+              <option value="rings">Rings</option>
+              <option value="diamond_set">Diamond Set</option>
+              <option value="gold_chain">Gold Chain</option>
+              <option value="pendants">Pendants</option>
+              <option value="bangles">Bangles</option>
+              <option value="anklets">Anklets</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-gray-700">Gender/Type</label>
+            <select name="gender" multiple onChange={handleSelectChange} className="mt-1 p-2 border border-gray-300 rounded w-full">
+              <option value="men">Men</option>
+              <option value="women">Women</option>
+            </select>
           </div>
         </div>
         <div>
           <label className="block text-gray-700">Size</label>
-          <input
-            type="text"
-            name="size"
-            value={product.size}
-            onChange={handleChange}
-            className="mt-1 p-2 border border-gray-300 rounded w-full"
-          />
+          <input type="text" name="size" value={product.size} onChange={handleChange} className="mt-1 p-2 border border-gray-300 rounded w-full" />
         </div>
-        <div>
-          <label className="block text-gray-700">Price</label>
-          <input
-            type="number"
-            name="price"
-            value={product.price}
-            onChange={handleChange}
-            className="mt-1 p-2 border border-gray-300 rounded w-full"
-            required
-          />
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label className="block text-gray-700">Price</label>
+            <input type="number" name="price" value={product.price} onChange={handleChange} className="mt-1 p-2 border border-gray-300 rounded w-full" required />
+          </div>
+          <div>
+            <label className="block text-gray-700">Discount Price</label>
+            <input type="number" name="discountPrice" value={product.discountPrice} onChange={handleChange} className="mt-1 p-2 border border-gray-300 rounded w-full" required />
+          </div>
         </div>
-        <div>
-          <label className="block text-gray-700">Discount Price</label>
-          <input
-            type="number"
-            name="discountPrice"
-            value={product.discountPrice}
-            onChange={handleChange}
-            className="mt-1 p-2 border border-gray-300 rounded w-full"
-            required
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-blue-500 text-white p-2 rounded mt-4 hover:bg-blue-600"
-        >
+        <button type="submit" className="w-full bg-black text-white p-3 rounded-lg mt-4 hover:bg-gray-800">
           Update Product
         </button>
       </form>
