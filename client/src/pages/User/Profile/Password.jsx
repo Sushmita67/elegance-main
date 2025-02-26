@@ -102,8 +102,8 @@ const Password = () => {
             )}
           </div>
         </div>
-        <button className="mt-5 w-full h-14 bg-black rounded-lg lg:rounded-xl text-white flex items-center justify-center lg:w-2/5 lg:ml-auto shadow-[inset_0_-1px_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-black border transition-all duration-300 overflow-hidden">
-          {updating ? (
+        <button className="mt-5 w-full h-14 bg-black rounded-lg lg:rounded-xl text-white flex items-center justify-center lg:w-2/5 lg:ml-auto shadow-[inset_0_-1px_0_0_rgba(60,60,60,0.6)] hover:shadow-[inset_0_-4rem_0_0_rgba(60,60,60,0.6)] hover:text-white border transition-all duration-300 overflow-hidden">
+        {updating ? (
             <div
               className="spinner-border animate-spin inline-block w-4 h-4 border rounded-full"
               role="status"
