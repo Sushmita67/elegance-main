@@ -47,7 +47,6 @@ const Register = () => {
       <div className="bg-pale-black absolute inset-0 h-full -z-20">
         <img
           src={AuthBg}
-          alt="background of sneakers on a wooden board"
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
       </div>
@@ -221,23 +220,23 @@ const Register = () => {
               data in accordance with the <b>PRIVACY POLICY</b>
             </div>
             <button
-              className={
-                "w-full h-12 max-w-lg lg:max-w-none bg-black rounded-md mt-3 lg:mt-5 mb-2 text-white flex items-center justify-center lg:w-2/5 shadow-[inset_0_-1px_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-black border transition-all duration-300 " +
-                (loading ? "cursor-not-allowed" : "cursor-auto")
-              }
-              disabled={loading}
-            >
-              {loading ? (
-                <div
-                  className="spinner-border animate-spin inline-block w-4 h-4 border rounded-full"
-                  role="status"
-                >
-                  <span className="sr-only">Loading...</span>
-                </div>
-              ) : (
-                <>CREATE</>
-              )}
-            </button>
+  className={
+    "w-full h-12 max-w-lg lg:max-w-none bg-black rounded-md mt-3 lg:mt-5 mb-2 text-white flex items-center justify-center lg:w-2/5 shadow-[inset_0_-1px_0_0_#36454F] hover:shadow-[inset_0_-4rem_0_0_#36454F] hover:text-white border border-black transition-all duration-300 " +
+    (loading ? "cursor-not-allowed" : "cursor-auto")
+  }
+  disabled={loading}
+>
+  {loading ? (
+    <div
+      className="spinner-border animate-spin inline-block w-4 h-4 border rounded-full"
+      role="status"
+    >
+      <span className="sr-only">Loading...</span>
+    </div>
+  ) : (
+    <>CREATE</>
+  )}
+</button>
             <div className="links mt-12 flex flex-wrap w-full">
               <span className="text-dark-grayish-blue lg:mr-4">
                 Already have an account?{" "}
