@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <div className="relative h-screen">
-      <div className="bg-pale-black absolute inset-0 h-full w-full -z-20">
+      <div className="bg-pale-orange absolute inset-0 h-full w-full -z-20">
         <img
           src={AuthBg}
           alt="background of sneakers on a wooden board"
@@ -60,7 +60,7 @@ const Login = () => {
                 id="email"
                 name="email"
                 type="text"
-                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
+                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
                 placeholder="username or email"
                 {...register("email")}
                 required
@@ -77,7 +77,7 @@ const Login = () => {
                 id="password"
                 name="password"
                 type="password"
-                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
+                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
                 placeholder="Password"
                 {...register("password")}
                 required
@@ -90,36 +90,36 @@ const Login = () => {
               </label>
             </div>
             <button
-              type="submit"
-              className={
-                "w-full h-12 max-w-lg lg:max-w-none bg-black rounded-md mt-3 mb-2 text-white flex items-center justify-center lg:w-2/5 border border-black shadow-[inset_0_0_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-black transition-all duration-300 " +
-                (loading ? "cursor-not-allowed" : "cursor-auto")
-              }
-              disabled={loading}
-            >
-              {loading ? (
-                <div
-                  className=" spinner-border animate-spin inline-block w-4 h-4 border rounded-full"
-                  role="status"
-                >
-                  <span className="sr-only">Loading...</span>
-                </div>
-              ) : (
-                <>LOGIN</>
-              )}
-            </button>
+  type="submit"
+  className={
+    "w-full h-12 max-w-lg lg:max-w-none bg-black rounded-md mt-3 mb-2 text-white flex items-center justify-center lg:w-2/5 border border-black shadow-[inset_0_0_0_0_#36454F] hover:shadow-[inset_0_-4rem_0_0_#36454F] hover:text-white transition-all duration-300 " +
+    (loading ? "cursor-not-allowed" : "cursor-auto")
+  }
+  disabled={loading}
+>
+  {loading ? (
+    <div
+      className="spinner-border animate-spin inline-block w-4 h-4 border rounded-full"
+      role="status"
+    >
+      <span className="sr-only">Loading...</span>
+    </div>
+  ) : (
+    <>LOGIN</>
+  )}
+</button>
             <br />
             <br />
             <div className="links mt-12 flex flex-wrap justify-between w-full">
               <a
-                className="mb-5 lg:mb-0 border-b-2 border-solid hover:border-black border-transparent transition-all"
+                className="mb-5 lg:mb-0 border-b-2 border-solid hover:border-orange border-transparent transition-all"
                 href="/"
               >
                 FORGET PASSWORD?
               </a>
               <NavLink
                 to="/register"
-                className="border-b-2 border-solid border-transparent hover:border-black transition-color"
+                className="border-b-2 border-solid border-transparent hover:border-orange transition-color"
                 href="/"
               >
                 CREATE NEW ACCOUNT
