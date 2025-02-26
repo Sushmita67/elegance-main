@@ -11,7 +11,7 @@ import {
 } from "../redux/reducers/productSlice";
 
 const Women = () => {
-  document.title = "Women's Sneakers";
+  document.title = "Women's Jewelry";
 
   let location = useLocation();
   let gender = location.pathname.split("/")[2];
