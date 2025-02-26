@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import logo from "../../assets/collections/logo-main.svg";
 import menu from "../../assets/collections/logo-main.svg";
-import avatar from "../../assets/image-avatar.png";
+import avatar from "../../assets/collections/jewels.png";
 import Cart from "./Cart";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
