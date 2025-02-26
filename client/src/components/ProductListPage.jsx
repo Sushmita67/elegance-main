@@ -50,7 +50,6 @@ const ProductList = () => {
 
   return (
     <div className="flex justify-center p-6">
-      {/* Fixed Container (Top-Aligned, Centered Horizontally) */}
       <div className="w-[1000px] bg-white shadow-lg rounded-lg p-6">
         <h1 className="text-3xl font-bold mb-4 text-gray-800">Product List</h1>
 
@@ -71,10 +70,11 @@ const ProductList = () => {
           </Link>
         </div>
 
-        {/* Scrollable Table */}
+        {/* Scrollable Table with Fixed Header */}
         <div className="max-h-[450px] overflow-y-auto border rounded-lg shadow">
           <table className="min-w-full bg-white">
-            <thead className="bg-gray-200 text-gray-700">
+            {/* Fixed Header */}
+            <thead className="sticky top-0 bg-gray-200 text-gray-700 shadow">
               <tr>
                 <th className="px-6 py-3 text-left font-medium">Title</th>
                 <th className="px-6 py-3 text-left font-medium">Price</th>
