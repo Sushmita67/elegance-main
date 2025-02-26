@@ -11,7 +11,6 @@
 //         <div className="absolute top-0 left-0 bg-dark-grayish-blue w-full h-48 rounded-md overflow-hidden">
 //           <img
 //             src={AboutHeader}
-//             alt="rows of sneakers"
 //             className="opacity-10 absolute h-full w-full object-cover"
 //           />
 //         </div>
@@ -58,7 +57,7 @@ export default function About() {
             Emirates Elegance
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto">
-            Elevate your senses with our exquisite collection of luxury jewellery,
+            Elevate your senses with our exquisite collection of luxury jewelry,
             crafted with the finest and unparalleled attention to detail.
           </p>
         </div>
@@ -97,7 +96,7 @@ export default function About() {
             <div className="flex items-center justify-center">
               <img
                 src="/images/about.jpg"
-                alt="Emirates Elegance Jewellery"
+                alt="Emirates Elegance Jewelry"
                 className="rounded-lg shadow-lg w-[500px] object-fill"
               />
             </div>
