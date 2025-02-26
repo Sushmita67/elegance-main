@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import logo from "../../assets/collections/logo-main.svg";
+import logo from "../../assets/collections/logo-1.svg";
 import menu from "../../assets/collections/logo-main.svg";
 import avatar from "../../assets/collections/jewels.png";
 import Cart from "./Cart";
@@ -105,16 +105,8 @@ const Header = () => {
               <ion-icon name="close-outline"></ion-icon>
             </div>
           </div>
-          <NavLink
-            to="/"
-            className="logo mx-4 -mt-1 lg:m-auto lg:w-[138px] z-50"
-          >
-          <header className="flex items-center justify-between p-4 bg-white shadow-md">
-  <div className="flex items-center space-x-4">
-    <img src="/logo-1.svg" alt="Elegance Jewelry Logo" className="h-12 w-auto" />
-  </div>
-</header>
-
+          <NavLink to="/" className="logo mx-4 -mt-1 lg:m-auto">
+            <img src={logo} alt="Logo" className="w-56 h-auto lg:w-60" />
           </NavLink>
           <nav
             ref={navMenu}
