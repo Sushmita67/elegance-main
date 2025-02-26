@@ -36,7 +36,6 @@ const Login = () => {
       <div className="bg-pale-orange absolute inset-0 h-full w-full -z-20">
         <img
           src={AuthBg}
-          alt="background of sneakers on a wooden board"
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
       </div>
@@ -90,24 +89,24 @@ const Login = () => {
               </label>
             </div>
             <button
-  type="submit"
-  className={
-    "w-full h-12 max-w-lg lg:max-w-none bg-black rounded-md mt-3 mb-2 text-white flex items-center justify-center lg:w-2/5 border border-black shadow-[inset_0_0_0_0_#36454F] hover:shadow-[inset_0_-4rem_0_0_#36454F] hover:text-white transition-all duration-300 " +
-    (loading ? "cursor-not-allowed" : "cursor-auto")
-  }
-  disabled={loading}
->
-  {loading ? (
-    <div
-      className="spinner-border animate-spin inline-block w-4 h-4 border rounded-full"
-      role="status"
-    >
-      <span className="sr-only">Loading...</span>
-    </div>
-  ) : (
-    <>LOGIN</>
-  )}
-</button>
+              type="submit"
+              className={
+                "w-full h-12 max-w-lg lg:max-w-none bg-black rounded-md mt-3 mb-2 text-white flex items-center justify-center lg:w-2/5 border border-black shadow-[inset_0_0_0_0_#36454F] hover:shadow-[inset_0_-4rem_0_0_#36454F] hover:text-white transition-all duration-300 " +
+                (loading ? "cursor-not-allowed" : "cursor-auto")
+              }
+              disabled={loading}
+            >
+              {loading ? (
+                <div
+                  className="spinner-border animate-spin inline-block w-4 h-4 border rounded-full"
+                  role="status"
+                >
+                  <span className="sr-only">Loading...</span>
+                </div>
+              ) : (
+                <>LOGIN</>
+              )}
+            </button>
             <br />
             <br />
             <div className="links mt-12 flex flex-wrap justify-between w-full">
