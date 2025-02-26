@@ -83,7 +83,7 @@ const ProductDetails = () => {
 
         <button
           onClick={() => dispatch(addToCart({ product, quantity }))}
-          className="cart w-full h-14 bg-black rounded-lg lg:rounded-xl mb-2 shadow-black-shadow shadow-2xl text-white flex items-center justify-center lg:w-3/5 hover:opacity-60"
+          className="cart w-full h-14 bg-black rounded-lg lg:rounded-xl mb-2 shadow-[0px_10px_30px_#f5f5dc] text-white flex items-center justify-center lg:w-3/5 hover:opacity-60"
         >
           <i className="cursor-pointer text-white text-xl leading-0 pr-3">
             <ion-icon name="cart-outline"></ion-icon>
