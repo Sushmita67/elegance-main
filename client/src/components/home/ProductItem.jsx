@@ -20,7 +20,7 @@ const ProductItem = ({ product, containFilter }) => {
       <div className="">
         <Link to={`/products/${product._id}`} className="cursor-pointer">
           <span aria-hidden="true" className="absolute inset-0" />
-          <p className="company uppercase text-orange font-bold text-[0.625rem] tracking-wider pb-2 pt-4">
+          <p className="company uppercase text-black font-bold text-[0.625rem] tracking-wider pb-2 pt-4">
             {product.company}
           </p>
           <h3 className="product capitalize text-very-dark-blue text-lg font-bold sm:leading-none pb-4 h-12">
@@ -34,7 +34,7 @@ const ProductItem = ({ product, containFilter }) => {
           <div className="original-price text-grayish-blue line-through">
             ${product.price}
           </div>
-          <div className="discount text-orange bg-pale-orange font-bold w-max px-2 rounded mx-5 h-6">
+          <div className="discount text-black bg-pale-black font-bold w-max px-2 rounded mx-5 h-6">
             {Math.floor(
               (product.price / product.price -
                 product.discountPrice / product.price) *

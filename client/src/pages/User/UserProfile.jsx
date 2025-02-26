@@ -45,11 +45,11 @@ const UserProfile = () => {
                   "text-dark-grayish-blue group  px-3 py-2 flex items-center text-sm font-medium" +
                   (!isActive
                     ? " hover:bg-light-grayish-blue"
-                    : " border-l-4 bg-pale-orange border-orange hover:bg-pale-orange")
+                    : " border-l-4 bg-pale-black border-black hover:bg-pale-black")
                 }
                 end
                 aria-current="page"
-                x-state-description='Current: "bg-pale-orange border-orange text-dark-grayish-blue", Default: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
+                x-state-description='Current: "bg-pale-black border-black text-dark-grayish-blue", Default: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
               >
                 <ion-icon class="p-2 text-base" name="person"></ion-icon>
                 <span className="truncate">My Account</span>
@@ -61,9 +61,9 @@ const UserProfile = () => {
                   "text-dark-grayish-blue group  px-3 py-2 flex items-center text-sm font-medium" +
                   (!isActive
                     ? " hover:bg-light-grayish-blue"
-                    : " border-l-4 bg-pale-orange border-orange hover:bg-pale-orange")
+                    : " border-l-4 bg-pale-black border-black hover:bg-pale-black")
                 }
-                x-state-description='undefined: "bg-pale-orange border-orange text-dark-grayish-blue", undefined: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
+                x-state-description='undefined: "bg-pale-black border-black text-dark-grayish-blue", undefined: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
               >
                 <ion-icon class="p-2 text-base" name="basket"></ion-icon>
                 <span className="truncate">My Orders</span>
@@ -75,9 +75,9 @@ const UserProfile = () => {
                   "text-dark-grayish-blue group  px-3 py-2 flex items-center text-sm font-medium" +
                   (!isActive
                     ? " hover:bg-light-grayish-blue"
-                    : " border-l-4 bg-pale-orange border-orange hover:bg-pale-orange")
+                    : " border-l-4 bg-pale-black border-black hover:bg-pale-black")
                 }
-                x-state-description='undefined: "bg-pale-orange border-orange text-dark-grayish-blue", undefined: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
+                x-state-description='undefined: "bg-pale-black border-black text-dark-grayish-blue", undefined: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
               >
                 <ion-icon class="p-2 text-base" name="location"></ion-icon>
                 <span className="truncate">My Address</span>
@@ -89,9 +89,9 @@ const UserProfile = () => {
                   "text-dark-grayish-blue group  px-3 py-2 flex items-center text-sm font-medium" +
                   (!isActive
                     ? " hover:bg-light-grayish-blue"
-                    : " border-l-4 bg-pale-orange border-orange hover:bg-pale-orange")
+                    : " border-l-4 bg-pale-black border-black hover:bg-pale-black")
                 }
-                x-state-description='undefined: "bg-pale-orange border-orange text-dark-grayish-blue", undefined: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
+                x-state-description='undefined: "bg-pale-black border-black text-dark-grayish-blue", undefined: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
               >
                 <ion-icon class="p-2 text-base" name="notifications"></ion-icon>
                 <span className="truncate">Notifications</span>
@@ -103,9 +103,9 @@ const UserProfile = () => {
                   "text-dark-grayish-blue group  px-3 py-2 flex items-center text-sm font-medium" +
                   (!isActive
                     ? " hover:bg-light-grayish-blue"
-                    : " border-l-4 bg-pale-orange border-orange hover:bg-pale-orange")
+                    : " border-l-4 bg-pale-black border-black hover:bg-pale-black")
                 }
-                x-state-description='undefined: "bg-pale-orange border-orange text-dark-grayish-blue", undefined: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
+                x-state-description='undefined: "bg-pale-black border-black text-dark-grayish-blue", undefined: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
               >
                 <ion-icon class="p-2 text-base" name="key"></ion-icon>
                 <span className="truncate">Password</span>
@@ -117,9 +117,9 @@ const UserProfile = () => {
                   "text-dark-grayish-blue group  px-3 py-2 flex items-center text-sm font-medium" +
                   (!isActive
                     ? " hover:bg-light-grayish-blue"
-                    : " border-l-4 bg-pale-orange border-orange hover:bg-pale-orange")
+                    : " border-l-4 bg-pale-black border-black hover:bg-pale-black")
                 }
-                x-state-description='undefined: "bg-pale-orange border-orange text-dark-grayish-blue", undefined: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
+                x-state-description='undefined: "bg-pale-black border-black text-dark-grayish-blue", undefined: "border-transparent text-gray-900 hover:bg-gray-50 hover:text-gray-900"'
               >
                 <ion-icon class="p-2 text-base" name="settings"></ion-icon>
                 <span className="truncate">Account setting</span>
@@ -152,7 +152,7 @@ const UserProfile = () => {
                             Please{" "}
                             <NavLink
                               to="/login"
-                              className="text-sm border-b-2 border-b-orange font-bold"
+                              className="text-sm border-b-2 border-b-black font-bold"
                             >
                               Login
                             </NavLink>{" "}
@@ -173,7 +173,7 @@ const UserProfile = () => {
                 Please{" "}
                 <NavLink
                   to="/login"
-                  className="text-sm border-b-2 border-b-orange font-bold"
+                  className="text-sm border-b-2 border-b-black font-bold"
                 >
                   Login
                 </NavLink>{" "}

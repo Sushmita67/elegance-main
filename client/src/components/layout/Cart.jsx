@@ -96,7 +96,7 @@ const Cart = () => {
             </div>
             <div className="checkout w-full">
               <Link to="/checkout">
-                <button className="w-full h-14 bg-orange rounded-lg lg:rounded-xl mb-2 text-white flex items-center justify-center hover:opacity-60">
+                <button className="w-full h-14 bg-black rounded-lg lg:rounded-xl mb-2 text-white flex items-center justify-center hover:opacity-60">
                   Checkout
                 </button>
               </Link>

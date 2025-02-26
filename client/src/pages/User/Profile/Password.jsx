@@ -52,7 +52,7 @@ const Password = () => {
               type="password"
               id="current-password"
               name="currentPassword"
-              className="border-b-2 border-grayish-blue flex-1 text-very-dark-blue placeholder-grayish-blue focus:outline-none focus:border-orange px-2 md:p-2 bg-white w-full pr-0"
+              className="border-b-2 border-grayish-blue flex-1 text-very-dark-blue placeholder-grayish-blue focus:outline-none focus:border-black px-2 md:p-2 bg-white w-full pr-0"
               {...register("currentPassword")}
             />
           </div>
@@ -70,7 +70,7 @@ const Password = () => {
               type="password"
               id="new-password"
               name="newPassword"
-              className="border-b-2 border-grayish-blue flex-1 text-very-dark-blue placeholder-grayish-blue focus:outline-none focus:border-orange px-2 md:p-2 bg-white w-full pr-0"
+              className="border-b-2 border-grayish-blue flex-1 text-very-dark-blue placeholder-grayish-blue focus:outline-none focus:border-black px-2 md:p-2 bg-white w-full pr-0"
               {...register("newPassword")}
             />
           </div>
@@ -88,7 +88,7 @@ const Password = () => {
               type="password"
               id="confirm-password"
               name="password"
-              className="border-b-2 border-grayish-blue flex-1 text-very-dark-blue placeholder-grayish-blue focus:outline-none focus:border-orange px-2 md:p-2 bg-white w-full pr-0"
+              className="border-b-2 border-grayish-blue flex-1 text-very-dark-blue placeholder-grayish-blue focus:outline-none focus:border-black px-2 md:p-2 bg-white w-full pr-0"
               {...register("password", {
                 required: true,
                 validate: (value) => {
@@ -102,7 +102,7 @@ const Password = () => {
             )}
           </div>
         </div>
-        <button className="mt-5 w-full h-14 bg-orange rounded-lg lg:rounded-xl text-white flex items-center justify-center lg:w-2/5 lg:ml-auto shadow-[inset_0_-1px_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-orange border transition-all duration-300 overflow-hidden">
+        <button className="mt-5 w-full h-14 bg-black rounded-lg lg:rounded-xl text-white flex items-center justify-center lg:w-2/5 lg:ml-auto shadow-[inset_0_-1px_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-black border transition-all duration-300 overflow-hidden">
           {updating ? (
             <div
               className="spinner-border animate-spin inline-block w-4 h-4 border rounded-full"

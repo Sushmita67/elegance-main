@@ -20,7 +20,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Details & Support Info */}
-        <div className="flex flex-col lg:flex-row mt-48 bg-pale-orange shadow-xl rounded-lg mx-auto p-6 sm:p-10 lg:p-12">
+        <div className="flex flex-col lg:flex-row mt-48 bg-pale-black shadow-xl rounded-lg mx-auto p-6 sm:p-10 lg:p-12">
           <div className="text-very-dark-blue text-base lg:text-lg flex-1">
             
             {/* Customer Support Section */}

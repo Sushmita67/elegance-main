@@ -42,24 +42,24 @@ const Footer = () => {
         {/* Middle Section: Navigation Links */}
         <nav className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
           <ul className="text-center sm:text-left">
-            <li className="mb-2 hover:text-orange">
+            <li className="mb-2 hover:text-black">
               <Link to="/collections">Collections</Link>
             </li>
-            <li className="mb-2 hover:text-orange">
+            <li className="mb-2 hover:text-black">
               <Link to="/about-us">About us</Link>
             </li>
-            <li className="hover:text-orange">
+            <li className="hover:text-black">
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
           <ul className="text-center sm:text-left">
-            <li className="mb-2 hover:text-orange">
+            <li className="mb-2 hover:text-black">
               <Link to="/products">Products</Link>
             </li>
-            <li className="mb-2 hover:text-orange">
+            <li className="mb-2 hover:text-black">
               <Link to="/products/men">Men</Link>
             </li>
-            <li className="hover:text-orange">
+            <li className="hover:text-black">
               <Link to="/products/women">Women</Link>
             </li>
           </ul>

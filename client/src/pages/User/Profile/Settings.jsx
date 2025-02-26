@@ -61,7 +61,7 @@ const Settings = () => {
                 </label>
                 <input
                   className={
-                    "border-b-2 border-transparent flex-1 text-very-dark-blue placeholder-grayish-blue focus:outline-none focus:!border-orange px-2 md:p-2 bg-white w-full sm:text-right pr-0" +
+                    "border-b-2 border-transparent flex-1 text-very-dark-blue placeholder-grayish-blue focus:outline-none focus:!border-black px-2 md:p-2 bg-white w-full sm:text-right pr-0" +
                     (editable && " !border-grayish-blue ")
                   }
                   id="firstname"
@@ -77,7 +77,7 @@ const Settings = () => {
                 </label>
                 <input
                   className={
-                    "border-b-2 border-transparent flex-1 focus:outline-none focus:!border-orange placeholder-grayish-blue mt-3 md:mt-0 px-2 md:p-2 bg-white w-full" +
+                    "border-b-2 border-transparent flex-1 focus:outline-none focus:!border-black placeholder-grayish-blue mt-3 md:mt-0 px-2 md:p-2 bg-white w-full" +
                     (editable && " !border-grayish-blue")
                   }
                   id="lastname"
@@ -101,7 +101,7 @@ const Settings = () => {
               </label>
               <input
                 className={
-                  "border-b-2 border-transparent flex-grow sm:text-center text-very-dark-blue placeholder-transparent focus:outline-none focus:!border-orange px-2 md:p-2 bg-white w-full" +
+                  "border-b-2 border-transparent flex-grow sm:text-center text-very-dark-blue placeholder-transparent focus:outline-none focus:!border-black px-2 md:p-2 bg-white w-full" +
                   (editable && " !border-grayish-blue")
                 }
                 id="email"
@@ -124,7 +124,7 @@ const Settings = () => {
               </label>
               <input
                 className={
-                  "appearance-none border-b-2 border-transparent flex-grow sm:text-center text-very-dark-blue placeholder-transparent focus:outline-none focus:!border-orange px-2 md:p-2 bg-white w-full" +
+                  "appearance-none border-b-2 border-transparent flex-grow sm:text-center text-very-dark-blue placeholder-transparent focus:outline-none focus:!border-black px-2 md:p-2 bg-white w-full" +
                   (editable && " !border-grayish-blue")
                 }
                 id="phone"
@@ -151,7 +151,7 @@ const Settings = () => {
                   name="gender"
                   {...register("gender")}
                   className={
-                    " appearance-none border-b-2 border-transparent  text-very-dark-blue placeholder-transparent focus:outline-none focus:!border-orange px-2 md:py-2 bg-white w-full" +
+                    " appearance-none border-b-2 border-transparent  text-very-dark-blue placeholder-transparent focus:outline-none focus:!border-black px-2 md:py-2 bg-white w-full" +
                     (editable && " !border-grayish-blue !appearance-[auto]")
                   }
                   disabled={!editable}
@@ -172,8 +172,8 @@ const Settings = () => {
             <button
               type="button"
               className={
-                "bg-pale-orange rounded-md font-medium focus:outline-none text-orange px-3 py-1 transition-all text-sm" +
-                (editable ? " !bg-orange !text-white" : "")
+                "bg-pale-black rounded-md font-medium focus:outline-none text-black px-3 py-1 transition-all text-sm" +
+                (editable ? " !bg-black !text-white" : "")
               }
               onClick={() => dispatch(enableUpdate())}
             >
@@ -185,8 +185,8 @@ const Settings = () => {
               <button
                 type="submit"
                 className={
-                  "bg-pale-orange rounded-md font-medium focus:outline-none text-orange px-3 py-1 transition-all text-sm" +
-                  (editable ? " !bg-orange !text-white" : "") +
+                  "bg-pale-black rounded-md font-medium focus:outline-none text-black px-3 py-1 transition-all text-sm" +
+                  (editable ? " !bg-black !text-white" : "") +
                   (updating ? " cursor-not-allowed" : " ")
                 }
                 disabled={updating}

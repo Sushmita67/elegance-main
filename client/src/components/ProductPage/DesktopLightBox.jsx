@@ -17,7 +17,7 @@ const DesktopLightBox = () => {
       <section className="modal-dialog absolute inset-0 flex-col items-end justify-center mt-20 h-screen transition duration-150 ease-in-out">
         <div className=" container max-w-lg m-auto relative p-3">
           <span
-            className="close absolute -top-10 right-0 text-4xl leading-0 cursor-pointer text-white hover:text-orange transition-colors"
+            className="close absolute -top-10 right-0 text-4xl leading-0 cursor-pointer text-white hover:text-black transition-colors"
             data-bs-dismiss="modal"
             aria-label="Close"
           >
@@ -31,7 +31,7 @@ const DesktopLightBox = () => {
               onClick={() => dispatch(prevPreview())}
               className="back-arrow w-14 h-14 bg-white rounded-full"
             >
-              <i className="flex items-center justify-center m-auto text-2xl hover:text-orange">
+              <i className="flex items-center justify-center m-auto text-2xl hover:text-black">
                 <ion-icon name="chevron-back-outline"></ion-icon>
               </i>
             </button>
@@ -39,7 +39,7 @@ const DesktopLightBox = () => {
               onClick={() => dispatch(nextPreview())}
               className="next-arrow w-14 h-14 bg-white rounded-full"
             >
-              <i className="flex items-center justify-center m-auto text-2xl hover:text-orange">
+              <i className="flex items-center justify-center m-auto text-2xl hover:text-black">
                 <ion-icon name="chevron-forward-outline"></ion-icon>
               </i>
             </button>

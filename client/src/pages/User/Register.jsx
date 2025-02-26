@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import AuthBg from "../../assets/user/auth-bg.jpg";
+import AuthBg from "../../assets/collections/about.jpg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -44,7 +44,7 @@ const Register = () => {
 
   return (
     <div className="relative">
-      <div className="bg-pale-orange absolute inset-0 h-full -z-20">
+      <div className="bg-pale-black absolute inset-0 h-full -z-20">
         <img
           src={AuthBg}
           alt="background of sneakers on a wooden board"
@@ -71,7 +71,7 @@ const Register = () => {
                 id="firstname"
                 name="firstname"
                 type="text"
-                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
                 placeholder="First Name"
                 {...register("firstname", {
                   required: "Please enter your first name",
@@ -94,7 +94,7 @@ const Register = () => {
                 id="lastname"
                 name="lastname"
                 type="text"
-                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
                 placeholder="Last Name"
                 {...register("lastname", {
                   required: "Please enter your last name",
@@ -117,7 +117,7 @@ const Register = () => {
                 id="username"
                 name="username"
                 type="text"
-                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
                 placeholder="username"
                 {...register("username", {
                   required: "Please enter your username",
@@ -140,7 +140,7 @@ const Register = () => {
                 id="email"
                 name="email"
                 type="email"
-                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
                 placeholder="email"
                 {...register("email", {
                   required: "Please include an email",
@@ -167,7 +167,7 @@ const Register = () => {
                 id="password"
                 name="password"
                 type="password"
-                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
                 placeholder="Password"
                 {...register("userPassword", {
                   required: "Please enter your password",
@@ -194,7 +194,7 @@ const Register = () => {
                 id="confirm-password"
                 name="confirm-password"
                 type="password"
-                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
                 placeholder="Confirm Password"
                 {...register("password", {
                   required: true,
@@ -222,7 +222,7 @@ const Register = () => {
             </div>
             <button
               className={
-                "w-full h-12 max-w-lg lg:max-w-none bg-orange rounded-md mt-3 lg:mt-5 mb-2 text-white flex items-center justify-center lg:w-2/5 shadow-[inset_0_-1px_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-orange border transition-all duration-300 " +
+                "w-full h-12 max-w-lg lg:max-w-none bg-black rounded-md mt-3 lg:mt-5 mb-2 text-white flex items-center justify-center lg:w-2/5 shadow-[inset_0_-1px_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-black border transition-all duration-300 " +
                 (loading ? "cursor-not-allowed" : "cursor-auto")
               }
               disabled={loading}
@@ -244,7 +244,7 @@ const Register = () => {
               </span>
               <NavLink
                 to="/login"
-                className="border-b-2 border-solid border-transparent hover:border-orange transition-color"
+                className="border-b-2 border-solid border-transparent hover:border-black transition-color"
                 href="/"
               >
                 LOGIN

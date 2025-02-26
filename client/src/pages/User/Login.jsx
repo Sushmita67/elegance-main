@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import AuthBg from "../../assets/user/auth-bg.jpg";
+import AuthBg from "../../assets/collections/about.jpg";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <div className="relative h-screen">
-      <div className="bg-pale-orange absolute inset-0 h-full w-full -z-20">
+      <div className="bg-pale-black absolute inset-0 h-full w-full -z-20">
         <img
           src={AuthBg}
           alt="background of sneakers on a wooden board"
@@ -60,7 +60,7 @@ const Login = () => {
                 id="email"
                 name="email"
                 type="text"
-                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
                 placeholder="username or email"
                 {...register("email")}
                 required
@@ -77,7 +77,7 @@ const Login = () => {
                 id="password"
                 name="password"
                 type="password"
-                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+                className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
                 placeholder="Password"
                 {...register("password")}
                 required
@@ -92,7 +92,7 @@ const Login = () => {
             <button
               type="submit"
               className={
-                "w-full h-12 max-w-lg lg:max-w-none bg-orange rounded-md mt-3 mb-2 text-white flex items-center justify-center lg:w-2/5 border border-orange shadow-[inset_0_0_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-orange transition-all duration-300 " +
+                "w-full h-12 max-w-lg lg:max-w-none bg-black rounded-md mt-3 mb-2 text-white flex items-center justify-center lg:w-2/5 border border-black shadow-[inset_0_0_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-black transition-all duration-300 " +
                 (loading ? "cursor-not-allowed" : "cursor-auto")
               }
               disabled={loading}
@@ -112,14 +112,14 @@ const Login = () => {
             <br />
             <div className="links mt-12 flex flex-wrap justify-between w-full">
               <a
-                className="mb-5 lg:mb-0 border-b-2 border-solid hover:border-orange border-transparent transition-all"
+                className="mb-5 lg:mb-0 border-b-2 border-solid hover:border-black border-transparent transition-all"
                 href="/"
               >
                 FORGET PASSWORD?
               </a>
               <NavLink
                 to="/register"
-                className="border-b-2 border-solid border-transparent hover:border-orange transition-color"
+                className="border-b-2 border-solid border-transparent hover:border-black transition-color"
                 href="/"
               >
                 CREATE NEW ACCOUNT

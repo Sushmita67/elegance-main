@@ -28,7 +28,7 @@ const DesktopPreview = () => {
             key={index}
             className={
               "cursor-pointer w-22 h-22 rounded-xl relative overflow-hidden bg-white transition-all" +
-              (curIndex === index ? " border border-orange" : "")
+              (curIndex === index ? " border border-black" : "")
             }
           >
             <img

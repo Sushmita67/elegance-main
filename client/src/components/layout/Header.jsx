@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import logo from "../../assets/logo.svg";
-import menu from "../../assets/icon-menu.svg";
+import logo from "../../assets/collections/logo-main.svg";
+import menu from "../../assets/collections/logo-main.svg";
 import avatar from "../../assets/image-avatar.png";
 import Cart from "./Cart";
 import { NavLink } from "react-router-dom";
@@ -127,7 +127,7 @@ const Header = () => {
                   onClick={displayMenu}
                   to="/products/men"
                   className={({ isActive }) =>
-                    "absolute inset-0 mb-5 pt-[2.5px] lg:pt-0 lg:mb-0 lg:mx-4 lg:h-inherit lg:flex lg:items-center cursor-pointer lg:relative lg:before:content-[attr(before)] before:absolute before:-bottom-1 before:left-0 before:h-full before:-z-10 before:lg:z-10 before:lg:h-1 before:bg-orange before:w-0 hover:before:w-full before:transition-all lg:hover:text-very-dark-blue " +
+                    "absolute inset-0 mb-5 pt-[2.5px] lg:pt-0 lg:mb-0 lg:mx-4 lg:h-inherit lg:flex lg:items-center cursor-pointer lg:relative lg:before:content-[attr(before)] before:absolute before:-bottom-1 before:left-0 before:h-full before:-z-10 before:lg:z-10 before:lg:h-1 before:bg-black before:w-0 hover:before:w-full before:transition-all lg:hover:text-very-dark-blue " +
                     (!isActive
                       ? ""
                       : "before:w-full text-white lg:text-very-dark-blue")
@@ -141,7 +141,7 @@ const Header = () => {
                   onClick={displayMenu}
                   to="/products/women"
                   className={({ isActive }) =>
-                    "absolute inset-0 mb-5 pt-[2.5px] lg:pt-0 lg:mb-0 lg:mx-4 lg:h-inherit lg:flex lg:items-center cursor-pointer lg:relative lg:before:content-[attr(before)] before:absolute before:-bottom-1 before:left-0 before:h-full before:-z-10 before:lg:z-10 before:lg:h-1 before:bg-orange before:w-0 hover:before:w-full before:transition-all lg:hover:text-very-dark-blue " +
+                    "absolute inset-0 mb-5 pt-[2.5px] lg:pt-0 lg:mb-0 lg:mx-4 lg:h-inherit lg:flex lg:items-center cursor-pointer lg:relative lg:before:content-[attr(before)] before:absolute before:-bottom-1 before:left-0 before:h-full before:-z-10 before:lg:z-10 before:lg:h-1 before:bg-black before:w-0 hover:before:w-full before:transition-all lg:hover:text-very-dark-blue " +
                     (!isActive
                       ? ""
                       : "before:w-full text-white lg:text-very-dark-blue")
@@ -155,7 +155,7 @@ const Header = () => {
                   onClick={displayMenu}
                   to="/products"
                   className={({ isActive }) =>
-                    "absolute inset-0 mb-5 pt-[2.5px] lg:pt-0 lg:mb-0 lg:mx-4 lg:h-inherit lg:flex lg:items-center cursor-pointer lg:relative lg:before:content-[attr(before)] before:absolute before:-bottom-1 before:left-0 before:h-full before:-z-10 before:lg:z-10 before:lg:h-1 before:bg-orange before:w-0 hover:before:w-full before:transition-all lg:hover:text-very-dark-blue " +
+                    "absolute inset-0 mb-5 pt-[2.5px] lg:pt-0 lg:mb-0 lg:mx-4 lg:h-inherit lg:flex lg:items-center cursor-pointer lg:relative lg:before:content-[attr(before)] before:absolute before:-bottom-1 before:left-0 before:h-full before:-z-10 before:lg:z-10 before:lg:h-1 before:bg-black before:w-0 hover:before:w-full before:transition-all lg:hover:text-very-dark-blue " +
                     (!isActive
                       ? ""
                       : "before:w-full text-white lg:text-very-dark-blue")
@@ -170,7 +170,7 @@ const Header = () => {
                   onClick={displayMenu}
                   to="/contact"
                   className={({ isActive }) =>
-                    "absolute inset-0 mb-5 pt-[2.5px] lg:pt-0 lg:mb-0 lg:mx-4 lg:h-inherit lg:flex lg:items-center cursor-pointer lg:relative lg:before:content-[attr(before)] before:absolute before:-bottom-1 before:left-0 before:h-full before:-z-10 before:lg:z-10 before:lg:h-1 before:bg-orange before:w-0 hover:before:w-full before:transition-all lg:hover:text-very-dark-blue " +
+                    "absolute inset-0 mb-5 pt-[2.5px] lg:pt-0 lg:mb-0 lg:mx-4 lg:h-inherit lg:flex lg:items-center cursor-pointer lg:relative lg:before:content-[attr(before)] before:absolute before:-bottom-1 before:left-0 before:h-full before:-z-10 before:lg:z-10 before:lg:h-1 before:bg-black before:w-0 hover:before:w-full before:transition-all lg:hover:text-very-dark-blue " +
                     (!isActive
                       ? ""
                       : "before:w-full text-white lg:text-very-dark-blue")
@@ -186,7 +186,7 @@ const Header = () => {
                     onClick={displayMenu}
                     to="/admin"
                     className={({ isActive }) =>
-                      "absolute inset-0 mb-5 pt-[2.5px] lg:pt-0 lg:mb-0 lg:mx-4 lg:h-inherit lg:flex lg:items-center cursor-pointer lg:relative lg:before:content-[attr(before)] before:absolute before:-bottom-1 before:left-0 before:h-full before:-z-10 before:lg:z-10 before:lg:h-1 before:bg-orange before:w-0 hover:before:w-full before:transition-all lg:hover:text-very-dark-blue " +
+                      "absolute inset-0 mb-5 pt-[2.5px] lg:pt-0 lg:mb-0 lg:mx-4 lg:h-inherit lg:flex lg:items-center cursor-pointer lg:relative lg:before:content-[attr(before)] before:absolute before:-bottom-1 before:left-0 before:h-full before:-z-10 before:lg:z-10 before:lg:h-1 before:bg-black before:w-0 hover:before:w-full before:transition-all lg:hover:text-very-dark-blue " +
                       (!isActive ? "" : "before:w-full text-white lg:text-very-dark-blue")
                     }
                   >
@@ -199,7 +199,7 @@ const Header = () => {
               <ul className="">
                 <li>
                   <NavLink to="/login">
-                    <button className="h-10 w-full sm:hidden bg-orange px-4 rounded-lg lg:rounded-xl text-white flex items-center justify-center hover:bg-white shadow-[inset_0_0_0_0_rgba(255,125,26,0.6)] hover:shadow-[inset_0_-4rem_0_0_rgba(255,125,26,0.6)] transition-all duration-300">
+                    <button className="h-10 w-full sm:hidden bg-black px-4 rounded-lg lg:rounded-xl text-white flex items-center justify-center hover:bg-white shadow-[inset_0_0_0_0_rgba(255,125,26,0.6)] hover:shadow-[inset_0_-4rem_0_0_rgba(255,125,26,0.6)] transition-all duration-300">
                       Login
                     </button>
                   </NavLink>
@@ -219,7 +219,7 @@ const Header = () => {
             <div className="cart-container">
               <div className="cart-wrapper mx-0 sm:mx-3 lg:mx-8 lg:mt-2 relative">
                 {total > 0 && (
-                  <div className="quantity-wrapper absolute px-2 rounded-full bg-orange z-10 -right-1/3 lg:-right-1/2 -top-2">
+                  <div className="quantity-wrapper absolute px-2 rounded-full bg-black z-10 -right-1/3 lg:-right-1/2 -top-2">
                     <div className="amount text-white text-xs">{total}</div>
                   </div>
                 )}
@@ -239,7 +239,7 @@ const Header = () => {
             </div>
             {!userInfo ? (
               <NavLink to="/login">
-                <button className="h-10 hidden sm:block bg-orange px-4 rounded-lg lg:rounded-xl ml-2 text-white flex items-center justify-center border shadow-[inset_0_-1px_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-orange overflow-hidden transition-all duration-300">
+                <button className="h-10 hidden sm:block bg-black px-4 rounded-lg lg:rounded-xl ml-2 text-white flex items-center justify-center border shadow-[inset_0_-1px_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-black overflow-hidden transition-all duration-300">
                   Login
                 </button>
               </NavLink>

@@ -67,7 +67,7 @@ const Checkout = () => {
     if (addresses.length === 0) {
       return (
         <Link to="/user-profile/addresses">
-          <p className="w-fit mt-8 mb-6 text-very-dark-blue border-b border-b-orange hover:border-b-transparent transition-all">
+          <p className="w-fit mt-8 mb-6 text-very-dark-blue border-b border-b-black hover:border-b-transparent transition-all">
             Please Add An Address
           </p>
         </Link>
@@ -109,7 +109,7 @@ const Checkout = () => {
               <h3 className="text-2xl font-bold text-dark-grayish-blue">Delivery Information</h3>
               {renderAddress()}
               <Link to="/user-profile/addresses">
-                <p className="w-fit mt-4 text-orange border-b border-b-orange hover:border-b-transparent transition-all">
+                <p className="w-fit mt-4 text-black border-b border-b-black hover:border-b-transparent transition-all">
                   Change Address
                 </p>
               </Link>
@@ -122,7 +122,7 @@ const Checkout = () => {
                   <div className="mt-8 py-6 flex">
                     <button
                       type="submit"
-                      className="w-full lg:w-60 lg:ml-auto bg-orange border border-transparent rounded-md py-3 px-4 text-base font-medium text-black shadow-[inset_0_0_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-orange transition-all duration-300"
+                      className="w-full lg:w-60 lg:ml-auto bg-black border border-transparent rounded-md py-3 px-4 text-base font-medium text-black shadow-[inset_0_0_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-black transition-all duration-300"
                     >
                       Proceed to Payment
                     </button>

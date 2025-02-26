@@ -101,7 +101,7 @@ const AddressForm = () => {
             id="firstname"
             name="firstname"
             type="text"
-            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
             placeholder="First Name"
             // IF ITS IN EDIT STATE, THE DEFAULT VALUES ARE THE VALUE OF THE ADDRESS INDEX, ELSE (IE IN CREATE STATE) ITS EMPTY
             defaultValue={
@@ -128,7 +128,7 @@ const AddressForm = () => {
             id="lastname"
             name="lastname"
             type="text"
-            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
             placeholder="Last Name"
             defaultValue={
               addressIndex !== null ? addresses[addressIndex].lastname : ""
@@ -154,7 +154,7 @@ const AddressForm = () => {
             id="number"
             name="number"
             type="text"
-            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
             placeholder="number"
             defaultValue={
               addressIndex !== null ? addresses[addressIndex].phone : ""
@@ -178,7 +178,7 @@ const AddressForm = () => {
             id="address"
             name="address"
             type="text"
-            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
             placeholder="Address"
             defaultValue={
               addressIndex !== null ? addresses[addressIndex].streetAddress : ""
@@ -204,7 +204,7 @@ const AddressForm = () => {
             id="state"
             name="state"
             type="text"
-            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
             placeholder="state"
             defaultValue={
               addressIndex !== null ? addresses[addressIndex].state : ""
@@ -228,7 +228,7 @@ const AddressForm = () => {
             id="city"
             name="city"
             type="text"
-            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
             placeholder="city"
             defaultValue={
               addressIndex !== null ? addresses[addressIndex].city : ""
@@ -252,7 +252,7 @@ const AddressForm = () => {
             id="zipcode"
             name="zipcode"
             type="text"
-            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
             placeholder="zip-code"
             defaultValue={
               addressIndex !== null ? addresses[addressIndex].zipcode : ""
@@ -271,7 +271,7 @@ const AddressForm = () => {
             id="country"
             name="country"
             type="text"
-            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-orange"
+            className="peer h-10 w-full border-b-2 border-grayish-blue text-very-dark-blue placeholder-transparent focus:outline-none focus:border-black"
             placeholder="country"
             defaultValue={
               addressIndex !== null ? addresses[addressIndex].country : ""
@@ -287,7 +287,7 @@ const AddressForm = () => {
         </div>
         <button
           className={
-            " w-full h-14 max-w-lg lg:max-w-none bg-orange rounded-lg lg:rounded-xl mt-10 lg:ml-auto mb-2 text-white flex items-center justify-center lg:w-2/5 shadow-[inset_0_-1px_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-orange border transition-all duration-300" +
+            " w-full h-14 max-w-lg lg:max-w-none bg-black rounded-lg lg:rounded-xl mt-10 lg:ml-auto mb-2 text-white flex items-center justify-center lg:w-2/5 shadow-[inset_0_-1px_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-black border transition-all duration-300" +
             (loading ? " cursor-not-allowed" : " ")
           }
           disabled={loading}

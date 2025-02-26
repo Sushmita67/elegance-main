@@ -34,13 +34,13 @@ const MyAddress = () => {
       <hr className="border-b border-grayish-blue mt-3 mb-8" />
       <div className="relative">
         {deleting && (
-          <p className="absolute -top-7 text-sm text-orange">Deleting...</p>
+          <p className="absolute -top-7 text-sm text-black">Deleting...</p>
         )}
         {error && (
           <p className="absolute -top-7 text-sm text-[red]">{errorMsg}</p>
         )}
         {settingDefault && (
-          <p className="absolute -top-7 text-sm text-orange">
+          <p className="absolute -top-7 text-sm text-black">
             Setting Default Address...
           </p>
         )}
@@ -62,7 +62,7 @@ const MyAddress = () => {
                   htmlFor="address"
                   className={
                     "w-full relative border rounded-md shadow-sm p-4 flex cursor-pointer focus:outline-none border-transparent " +
-                    (userAddress.checked ? "bg-pale-orange" : "bg-white")
+                    (userAddress.checked ? "bg-pale-black" : "bg-white")
                   }
                   onClick={(e) => {
                     // ENSURE IT DOESN'T SET DEFAULT WHEN ON EDIT OR DELETE
@@ -95,7 +95,7 @@ const MyAddress = () => {
                   >
                     <ion-icon
                       name="checkmark-circle"
-                      class="text-orange"
+                      class="text-black"
                     ></ion-icon>
                   </i>
                   <address className="not-italic text-very-dark-blue w-full">
@@ -117,8 +117,8 @@ const MyAddress = () => {
                         className={
                           "rounded-md font-medium focus:outline-none px-3 py-1 transition-all text-sm " +
                           (userAddress.checked
-                            ? "bg-orange text-white"
-                            : "bg-pale-orange text-orange")
+                            ? "bg-black text-white"
+                            : "bg-pale-black text-black")
                         }
                         // THE INDEX IS SIMPLY ITS INDEX IN THE ARRAY
                         onClick={() =>
@@ -151,7 +151,7 @@ const MyAddress = () => {
                     className={
                       "absolute -inset-px rounded-md pointer-events-none " +
                       (userAddress.checked
-                        ? "border-2 border-orange"
+                        ? "border-2 border-black"
                         : "border  border-grayish-blue")
                     }
                     aria-hidden="true"
@@ -166,7 +166,7 @@ const MyAddress = () => {
                 >
                   <ion-icon
                     name="add"
-                    class="text-white bg-orange text-3xl font-bold rounded-sm hover:bg-pale-orange hover:text-orange"
+                    class="text-white bg-black text-3xl font-bold rounded-sm hover:bg-pale-black hover:text-black"
                   ></ion-icon>
                 </button>
               )}
