@@ -122,8 +122,8 @@ const Checkout = () => {
                   <div className="mt-8 py-6 flex">
                     <button
                       type="submit"
-                      className="w-full lg:w-60 lg:ml-auto bg-black border border-transparent rounded-md py-3 px-4 text-base font-medium text-black shadow-[inset_0_0_0_0_#ffede1] hover:shadow-[inset_0_-4rem_0_0_#ffede1] hover:text-black transition-all duration-300"
-                    >
+                      className="w-full lg:w-60 lg:ml-auto bg-black border border-transparent rounded-md py-3 px-4 text-base font-medium text-white shadow-[inset_0_0_0_0_rgba(60,60,60,0.6)] hover:shadow-[inset_0_-4rem_0_0_rgba(60,60,60,0.6)] hover:text-white transition-all duration-300"
+                      >
                       Proceed to Payment
                     </button>
                   </div>
