@@ -4,7 +4,7 @@ import braceletBg from "../../assets/collections/home.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Hero = () => {
-  document.title = "Elegance Jewellery";
+  document.title = "Elegance Jewelry";
 
   return (
     <AnimatePresence>

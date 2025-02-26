@@ -109,9 +109,11 @@ const Header = () => {
             to="/"
             className="logo mx-4 -mt-1 lg:m-auto lg:w-[138px] z-50"
           >
-            <h1 className="
-            text-2xl font-bold
-            ">Elegance Jewellery</h1>
+          <header className="flex items-center justify-between p-4 bg-white shadow-md">
+  <div className="flex items-center space-x-4">
+    <img src="/logo-1.svg" alt="Elegance Jewelry Logo" className="h-12 w-auto" />
+  </div>
+</header>
 
           </NavLink>
           <nav
