@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import MenHeaderVideo from "../assets/page-header/ringss.mp4"; // Import the video file
+import MenHeaderVideo from "../assets/page-header/jewells.mp4"; // Import the video file
 import Filter from "../components/Filter";
 import ProductItem from "../components/home/ProductItem";
 import Loading from "../components/Loading";
