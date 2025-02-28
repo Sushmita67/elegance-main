@@ -29,20 +29,54 @@ const uploadImage = async (req, res, next) => {
 router.post("/uploadImage", upload, uploadImage);
 
 
-
-// @ route    GET api/auth
-// @desc      Get logged in user
-// @ access   Private
-router.get("/", async (req, res) => {
+// @route    GET api/auth/verify
+// @desc     Verify token and get logged-in user
+// @access   Private
+router.get("/verify", async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select("-password");
-    if (!user) {
-      return res.status(400).json({ msg: "user doesn't exist" });
+    // Extract the token from the Authorization header
+    const authHeader = req.header("Authorization");
+
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return res.status(401).send({ message: "No token provided or invalid token format" });
     }
-    res.json(user);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
+
+    const token = authHeader.split(" ")[1]; // Extract the token after "Bearer "
+
+    if (!token) {
+      return res.status(401).send({ message: "No token provided" });
+    }
+
+    // Verify the token using the correct secret
+    const verified = jwt.verify(token, process.env.JWT_SECRET || 'secretkey'); // Ensure this matches the secret used to sign the token
+
+    req.user = verified;
+
+    if (!verified) {
+      return res.status(401).send({ message: "Invalid or expired token" });
+    }
+
+    // Fetch the user details from the database
+    const user = await User.findById(verified.user.id).select("-password");
+
+    if (!user) {
+      return res.status(404).send({ message: "User not found" });
+    }
+
+    // Return the user details
+    res.status(200).send({ message: "Token is valid", user });
+  } catch (error) {
+    console.error("Token Verification Error:", error);
+
+    if (error.name === "JsonWebTokenError") {
+      return res.status(401).send({ message: "Invalid token", error: error.message });
+    }
+
+    if (error.name === "TokenExpiredError") {
+      return res.status(401).send({ message: "Token has expired", error: error.message });
+    }
+
+    res.status(500).send({ message: "Server Error", error: error.message });
   }
 });
 
@@ -57,7 +91,6 @@ router.post(
   body("email", "Please include a valid email").isEmail(),
   body("password", "Password is required").exists(),
   async (req, res) => {
-    console.log(req.body);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -87,7 +120,7 @@ router.post(
       jwt.sign(
         payload,
         process.env.JWT_SECRET || 'secret', // Use an environment variable or a default secret
-        { expiresIn: '1h' }, // Use a more secure expiration time
+        { expiresIn: '6h' }, // Use a more secure expiration time
         (error, token) => {
           if (error) {
             console.error('JWT Error:', error);

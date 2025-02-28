@@ -9,7 +9,7 @@ const ProductSchema = new mongoose.Schema(
     alt: { type: String, required: true },
     categories: [
       {
-        color: { type: Array, required: true },
+        categories: { type: Array, required: true },
         gender: { type: Array, default: ["men", "women"] }
       }
     ],
