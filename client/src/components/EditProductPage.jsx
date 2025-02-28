@@ -76,14 +76,17 @@ const EditProduct = () => {
     formData.append('categories', JSON.stringify(product.categories));
 
     try {
-      await axios.put(`/api/products/${id}`, formData, {
+     const response = await axios.patch(`/api/products/${id}`, formData, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'multipart/form-data'
         }
       });
-      alert('Product updated successfully');
-      navigate('/products');
+      if (response.status===200){
+        alert('Product updated successfully');
+        navigate('/products');
+      }
+
     } catch (err) {
       if (err.response && err.response.data.errors) {
         setErrors(err.response.data.errors);
