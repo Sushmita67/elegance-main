@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-14 px-6 md:px-14 rounded-t-2xl w-full">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start">
-        
+
         {/* Left Section: Logo & Socials */}
         <div className="text-center md:text-left">
           <a href="/" className="text-xl font-bold whitespace-nowrap">
@@ -42,33 +42,34 @@ const Footer = () => {
         {/* Middle Section: Navigation Links */}
         <nav className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
           <ul className="text-center sm:text-left">
-            <li className="mb-2 hover:text-black">
+            <li className="mb-2 hover:text-[#FFD700]">
               <Link to="/collections">Collections</Link>
             </li>
-            <li className="mb-2 hover:text-black">
+            <li className="mb-2 hover:text-[#FFD700]">
               <Link to="/about-us">About us</Link>
             </li>
-            <li className="hover:text-black">
+            <li className="hover:text-[#FFD700]">
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
           <ul className="text-center sm:text-left">
-            <li className="mb-2 hover:text-black">
+            <li className="mb-2 hover:text-[#FFD700]">
               <Link to="/products">Products</Link>
             </li>
-            <li className="mb-2 hover:text-black">
+            <li className="mb-2 hover:text-[#FFD700]">
               <Link to="/products/men">Men</Link>
             </li>
-            <li className="hover:text-black">
+            <li className="hover:text-[#FFD700]">
               <Link to="/products/women">Women</Link>
             </li>
           </ul>
         </nav>
 
+
         {/* Right Section: Copyright */}
-        <div className="text-center md:text-left text-sm text-gray-400">
+        <div className="text-center md:text-left text-sm text-gray-400 space-y-1">
           <p>© 2025 All Rights Reserved.</p>
-          <p>Emirate Elegance by Sushmita Bishwakarma</p>
+          <p>Elegance Affair by Sushmita Bishwakarma</p>
         </div>
       </div>
     </footer>
