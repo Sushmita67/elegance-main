@@ -76,6 +76,7 @@ const ProductList = () => {
             {/* Fixed Header */}
             <thead className="sticky top-0 bg-gray-200 text-gray-700 shadow">
               <tr>
+                <th className="px-6 py-3 text-left font-medium">Photo</th>
                 <th className="px-6 py-3 text-left font-medium">Title</th>
                 <th className="px-6 py-3 text-left font-medium">Price</th>
                 <th className="px-6 py-3 text-left font-medium">Actions</th>
@@ -84,6 +85,13 @@ const ProductList = () => {
             <tbody>
               {products.map((product) => (
                 <tr key={product._id} className="border-b border-gray-200 hover:bg-gray-100">
+                  <td className="flex-1 px-4 py-2 text-sm font-medium text-gray-900">
+                    <img
+                        src={`http://localhost:5000${product.img}`}
+                        alt={product.title}
+                        className="w-16 h-16 object-cover rounded"
+                    />
+                  </td>
                   <td className="px-6 py-4 text-gray-800">{product.title}</td>
                   <td className="px-6 py-4 text-gray-800">${product.price}</td>
                   <td className="px-6 py-4 flex items-center space-x-6">
