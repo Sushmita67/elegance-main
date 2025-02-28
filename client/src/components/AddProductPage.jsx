@@ -1,191 +1,106 @@
+import React, { useState } from "react"; 
+import { useSelector } from "react-redux";
+import { motion, AnimatePresence } from "framer-motion";
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+const MyAccount = () => {
+  document.title = "My Account";
+  const { userInfo } = useSelector((state) => state.auth);
+  const [profileImage, setProfileImage] = useState(userInfo.profileImg || null);
+  const [preview, setPreview] = useState(userInfo.profileImg || null);
 
-const AddProduct = () => {
-  const [product, setProduct] = useState({
-    id: null, // Added default value to prevent errors
-    company: '',
-    title: '',
-    desc: '',
-    img: null,
-    alt: '',
-    categories: [{ category: [], gender: [] }],
-    size: [],
-    price: '',
-    discountPrice: ''
-  });
-
-  const [errors, setErrors] = useState(null);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProduct({
-      ...product,
-      [name]: value
-    });
-  };
-
-  const handleFileChange = (e) => {
-    setProduct({
-      ...product,
-      img: e.target.files[0]
-    });
-  };
-
-  const handleSelectChange = (e) => {
-    const { name, options } = e.target;
-    const selectedOptions = Array.from(options).filter(option => option.selected).map(option => option.value);
-
-    setProduct({
-      ...product,
-      categories: product.categories.map(category =>
-        ({ ...category, [name]: selectedOptions })
-      )
-    });
-  };
-
-  const generateSlug = (title) => {
-    return title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData();
-    formData.append('company', product.company);
-    formData.append('title', product.title);
-    formData.append('desc', product.desc);
-    formData.append('picture', product.img);
-    formData.append('alt', product.alt);
-    formData.append('size', JSON.stringify(product.size));
-    formData.append('price', product.price);
-    formData.append('discountPrice', product.discountPrice);
-    formData.append('categories', JSON.stringify(product.categories));
-    formData.append('slug', generateSlug(product.title));
-
-    try {
-      await axios.post('/api/products', formData, {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      alert('Product added successfully');
-      setProduct({
-        id: null,
-        company: '',
-        title: '',
-        desc: '',
-        img: null,
-        alt: '',
-        categories: [{ category: [], gender: [] }],
-        size: [],
-        price: '',
-        discountPrice: ''
-      });
-    } catch (err) {
-      if (err.response && err.response.data.errors) {
-        setErrors(err.response.data.errors);
-      } else {
-        alert('Error adding product');
-      }
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setProfileImage(file);
+      setPreview(URL.createObjectURL(file));
     }
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-  <h1 className="text-3xl font-bold text-gray-900 mb-8">Add New Product</h1>
-  <form onSubmit={handleSubmit} className="space-y-6" encType="multipart/form-data">
-    {errors && (
-      <div className="bg-red-100 border border-red-400 text-red-700 p-3 rounded-lg">
-        {errors.map((error, index) => (
-          <p key={index}>{error.msg}</p>
-        ))}
+    <AnimatePresence>
+      <h3 className="text-xl leading-6 font-bold text-gray-900">My Account</h3>
+      <p className="mt-1 max-w-2xl text-sm text-gray-500">
+        Personal details and application.
+      </p>
+      <hr className="border-b border-grayish-blue mt-3 mb-8" />
+      
+      {/* Profile Image Upload */}
+      <div className="flex items-center space-x-4 py-4">
+        {preview ? (
+          <img src={preview} alt="Profile Preview" className="w-24 h-24 rounded-full border" />
+        ) : (
+          <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
+            No Image
+          </div>
+        )}
+        <input type="file" accept="image/*" onChange={handleImageChange} className="text-sm" />
       </div>
-    )}
 
-    {/* Company & Title */}
-    <div className="grid grid-cols-2 gap-6">
-      <div>
-        <label className="block font-medium text-gray-800">Company</label>
-        <input type="text" name="company" value={product.company} onChange={handleChange} className="mt-2 py-3 px-4 border border-gray-300 rounded-lg w-full" required />
-      </div>
-      <div>
-        <label className="block font-medium text-gray-800">Title</label>
-        <input type="text" name="title" value={product.title} onChange={handleChange} className="mt-2 py-3 px-4 border border-gray-300 rounded-lg w-full" required />
-      </div>
-    </div>
+      <dl className="grid grid-cols-1 gap-x-4 sm:grid-cols-1 divide-y divide-gray-200">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="sm:grid sm:grid-cols-3 sm:gap-4 py-4"
+        >
+          <dt className="text-sm font-medium text-dark-grayish-blue px-2">
+            Full Name
+          </dt>
+          <dd className="mt-1 flex text-sm text-very-dark-blue sm:mt-0 sm:col-span-2">
+            <span className="sm:flex flex-grow px-2">
+              {userInfo.firstname} {userInfo.lastname}
+            </span>
+          </dd>
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="sm:grid sm:grid-cols-3 sm:gap-4 py-4"
+        >
+          <dt className="text-sm font-medium text-dark-grayish-blue px-2">
+            Email
+          </dt>
+          <dd className="mt-1 flex text-sm text-very-dark-blue sm:mt-0 sm:col-span-2 px-2">
+            {userInfo.email}
+          </dd>
+        </motion.div>
 
-    {/* Description */}
-    <div>
-      <label className="block font-medium text-gray-800">Description</label>
-      <textarea name="desc" value={product.desc} onChange={handleChange} className="mt-2 py-3 px-4 border border-gray-300 rounded-lg w-full" required />
-    </div>
+        {userInfo.phone && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="sm:grid sm:grid-cols-3 sm:gap-4 py-4"
+          >
+            <dt className="text-sm font-medium text-dark-grayish-blue px-2">
+              Phone Number
+            </dt>
+            <dd className="mt-1 flex text-sm text-very-dark-blue sm:mt-0 sm:col-span-2 px-2">
+              {userInfo.phone}
+            </dd>
+          </motion.div>
+        )}
 
-    {/* Image Upload */}
-    <div>
-      <label className="block font-medium text-gray-800">Upload Image</label>
-      <input type="file" name="picture" onChange={handleFileChange} className="mt-2 py-3 px-4 border border-gray-300 rounded-lg w-full" accept="image/*" required />
-    </div>
-
-    {/* Alternative Text & Size */}
-    <div className="grid grid-cols-2 gap-6">
-      <div>
-        <label className="block font-medium text-gray-800">Alternative Text</label>
-        <input type="text" name="alt" value={product.alt} onChange={handleChange} className="mt-2 py-3 px-4 border border-gray-300 rounded-lg w-full" required />
-      </div>
-      <div>
-        <label className="block font-medium text-gray-800">Size</label>
-        <input type="text" name="size" value={product.size} onChange={handleChange} className="mt-2 py-3 px-4 border border-gray-300 rounded-lg w-full" />
-      </div>
-    </div>
-
-    {/* Categories & Gender */}
-    <div className="grid grid-cols-2 gap-6">
-      <div>
-        <label className="block font-medium text-gray-800">Categories</label>
-        <select name="type" multiple onChange={handleSelectChange} className="mt-2 py-3 px-4 border border-gray-300 rounded-lg w-full">
-          <option value="earrings">Earrings</option>
-          <option value="necklace">Necklace</option>
-          <option value="bracelets">Bracelets</option>
-          <option value="rings">Rings</option>
-          <option value="diamond_set">Diamond Set</option>
-          <option value="gold_chain">Gold Chain</option>
-          <option value="pendants">Pendants</option>
-          <option value="bangles">Bangles</option>
-          <option value="anklets">Anklets</option>
-        </select>
-      </div>
-      <div>
-        <label className="block font-medium text-gray-800">Gender/Type</label>
-        <select name="gender" multiple onChange={handleSelectChange} className="mt-2 py-3 px-4 border border-gray-300 rounded-lg w-full">
-          <option value="men">Men</option>
-          <option value="women">Women</option>
-        </select>
-      </div>
-    </div>
-
-    {/* Price & Discount Price */}
-    <div className="grid grid-cols-2 gap-6">
-      <div>
-        <label className="block font-medium text-gray-800">Price</label>
-        <input type="number" name="price" value={product.price} onChange={handleChange} className="mt-2 py-3 px-4 border border-gray-300 rounded-lg w-full" required />
-      </div>
-      <div>
-        <label className="block font-medium text-gray-800">Discount Price</label>
-        <input type="number" name="discountPrice" value={product.discountPrice} onChange={handleChange} className="mt-2 py-3 px-4 border border-gray-300 rounded-lg w-full" required />
-      </div>
-    </div>
-
-    {/* Submit Button */}
-    <button type="submit" className="w-full bg-black text-white p-4 rounded-xl mt-6 hover:bg-gray-800 transition-all duration-300">
-      Add Product
-    </button>
-  </form>
-</div>
-
+        {userInfo.gender && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="sm:grid sm:grid-cols-3 sm:gap-4 py-4"
+          >
+            <dt className="text-sm font-medium text-dark-grayish-blue px-2">
+              Gender
+            </dt>
+            <dd className="mt-1 flex text-sm text-very-dark-blue sm:mt-0 sm:col-span-2 px-2">
+              {userInfo.gender}
+            </dd>
+          </motion.div>
+        )}
+      </dl>
+    </AnimatePresence>
   );
 };
 
-export default AddProduct;
+export default MyAccount;
