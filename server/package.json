@@ -9,14 +9,19 @@
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm install --prefix client && npm run build --prefix client"
+    "build": "npm install --prefix client && npm run build --prefix client",
+    "test": "mocha \"test/*.js\" --timeout 5000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.1.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "chai": "^4.3.10",
+    "chai-http": "^4.2.0",
+    "mocha": "^11.1.0",
+    "supertest": "^7.0.0"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
