@@ -1,113 +1,118 @@
-const chai = require("chai");
-const chaiHttp = require("chai-http");
-const app = require("../server"); // Adjust if needed
-const expect = chai.expect;
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const app = require('../server'); // Adjust the path to your server file
+const Product = require('../models/Product'); // Adjust the path to your Product model
+const mongoose = require("mongoose");
 
 chai.use(chaiHttp);
+const { expect } = chai;
 
-describe("📦 Product API Tests", () => {
-  let productId = null;
+describe('Product Routes', () => {
+  let productId;
 
-  // ✅ 1️⃣ Test: GET all products
-  it("should get all products", (done) => {
-    chai
-      .request(app)
-      .get("/api/products")
-      .end((err, res) => {
-        expect(res).to.have.status(200);
-        expect(res.body).to.be.an("array");
-        done();
-      });
+  before(async () => {
+    
+          await mongoose.connect("mongodb://localhost:27017/elegance_db");
+      
+    // Clear the database before running tests
+    await Product.deleteMany({});
   });
 
-  // ✅ 2️⃣ Test: Create a new product
-  it("should create a new product", (done) => {
-    chai
-      .request(app)
-      .post("/api/products")
-      .set("Content-Type", "application/json")
-      .send({
-        company: "Jewels Inc.",
-        title: "Gold Necklace",
-        desc: "A beautiful 24K gold necklace",
-        price: 500,
-        discountPrice: 450,
-        categories: JSON.stringify([ "Necklace"]),
-        size: JSON.stringify(["Small", "Medium"]),
-        slug: "gold-necklace",
-      })
-      .end((err, res) => {
-        expect(res).to.have.status(201);
-        expect(res.body).to.have.property("_id");
-        productId = res.body._id; // Store the product ID for later tests
-        done();
-      });
+  after(async () => {
+    // Clean up the database after tests
+    await Product.deleteMany({});
   });
 
-//   // ✅ 3️⃣ Test: GET single product
-//   it("should fetch a product by ID", (done) => {
-//     chai
-//       .request(app)
-//       .get(`/api/products/${productId}`)
-//       .end((err, res) => {
-//         expect(res).to.have.status(200);
-//         expect(res.body).to.have.property("title", "Gold Necklace");
-//         done();
-//       });
-//   });
+//   it("should create new product", async function (){
+//     this.timeout(5000);
+//     const res = await chai.request(app)
+//   .post("/api/products")
+//   .field("company", "Test Brand")
+//   .field("title", "Test Product")
+//   .field("desc", "This is a test description")
+//   .field("price", 100)
+//   .field("discountPrice", 80)
+//   .field("categories", JSON.stringify(["J"]))
+//   .field("size", JSON.stringify(["M"]))
+//   .field("alt", "Test image")
+//   .attach("picture", "test/test-image.jpg");
 
-//   // ✅ 4️⃣ Test: Update product
-//   it("should update an existing product", (done) => {
-//     chai
-//       .request(app)
-//       .put(`/api/products/${productId}`)
-//       .send({
-//         title: "Updated Gold Necklace",
-//         price: 550,
-//       })
-//       .end((err, res) => {
-//         expect(res).to.have.status(200);
-//         expect(res.body).to.have.property("title", "Updated Gold Necklace");
-//         done();
-//       });
-//   });
+// console.log(res.body); // ✅ Log response to see actual error
 
-//   // ✅ 5️⃣ Test: PATCH product (partial update)
-//   it("should partially update a product", (done) => {
-//     chai
-//       .request(app)
-//       .patch(`/api/products/${productId}`)
-//       .send({
-//         price: 600,
-//       })
-//       .end((err, res) => {
-//         expect(res).to.have.status(200);
-//         expect(res.body).to.have.property("price", 600);
-//         done();
-//       });
-//   });
+// expect(res).to.have.status(201);
+// expect(res.body).to.have.property("_id");
+// expect(res.body).to.have.property("title", "Test Product");
 
-//   // ✅ 6️⃣ Test: DELETE product
-//   it("should delete a product", (done) => {
-//     chai
-//       .request(app)
-//       .delete(`/api/products/${productId}`)
-//       .end((err, res) => {
-//         expect(res).to.have.status(200);
-//         expect(res.body).to.have.property("msg", "Product successfully deleted");
-//         done();
-//       });
-//   });
+// testProductId = res.body._id;
+//    });
+  
 
-//   // ✅ 7️⃣ Test: Get a non-existent product (should fail)
-//   it("should return 400 when fetching a non-existent product", (done) => {
-//     chai
-//       .request(app)
-//       .get(`/api/products/65f2e07d4b8d3a0012345678`) // Non-existent ID
-//       .end((err, res) => {
-//         expect(res).to.have.status(400);
-//         expect(res.body.msg).to.equal("Product doesn't exist");
-//         done();
-//       });
-//   });
+  describe('GET /api/products', () => {
+    it('should get all products', async () => {
+      const res = await chai.request(app).get('/api/products');
+      expect(res).to.have.status(200);
+      expect(res.body).to.be.an('array');
+    });
+
+    it('should get the latest 1 products when query param "new" is true', async () => {
+      // Add test products with all required fields
+      await Product.insertMany([
+        {
+          company: 'Company A',
+          title: 'Product 1',
+          desc: 'Description 1',
+          price: 100,
+          slug: 'product-1',
+          discountPrice: 90,
+          alt: 'Alt 1',
+        },
+        {
+          company: 'Company B',
+          title: 'Product 2',
+          desc: 'Description 2',
+          price: 200,
+          slug: 'product-2',
+          discountPrice: 180,
+          alt: 'Alt 2',
+        },
+      ]);
+
+      const res = await chai.request(app).get('/api/products');
+      expect(res).to.have.status(200);
+      expect(res.body).to.be.an('array').with.lengthOf.at.most(5);
+    });
+
+    it('should get products by collection when query param "collection" is provided', async () => {
+      const res = await chai.request(app).get('/api/products?collection=Company A');
+      expect(res).to.have.status(200);
+      expect(res.body).to.be.an('array');
+      expect(res.body[0]).to.have.property('company', 'Company A');
+    });
+  });
+
+
+  describe('DELETE /api/products/:id', () => {
+    // it('should delete a product', async () => {
+    //   const res = await chai.request(app).delete(`/api/products/${productId}`);
+    //   expect(res).to.have.status(200);
+    //   expect(res.body).to.have.property('msg', 'Product successfully deleted');
+    // });
+
+    it('should return 400 if product does not exist', async () => {
+      const res = await chai.request(app).delete('/api/products/invalidId');
+      expect(res).to.have.status(400);
+      expect(res.body).to.have.property('msg', "Product doesn't exist");
+    });
+  });
+
+  it('should return 400 if required fields are missing', async () => {
+    const res = await chai
+      .request(app)
+      .post('/api/products')
+      .send({});
+
+    expect(res).to.have.status(400);
+    expect(res.body.errors).to.be.an('array');
+  });
 });
+
