@@ -1,0 +1,38 @@
+<testsuites id="" name="" tests="12" failures="0" skipped="0" errors="0" time="19.048546">
+<testsuite name="test\auth.spec.js" timestamp="2025-03-02T08:49:33.133Z" hostname="chromium" tests="2" failures="0" skipped="0" time="10.784" errors="0">
+<testcase name="Authentication Tests › should display all input fields and Create button" classname="test\auth.spec.js" time="6.325">
+</testcase>
+<testcase name="Authentication Tests › should display all input fields and Login button" classname="test\auth.spec.js" time="4.459">
+</testcase>
+</testsuite>
+<testsuite name="test\home.spec.js" timestamp="2025-03-02T08:49:33.133Z" hostname="chromium" tests="2" failures="0" skipped="0" time="9.116" errors="0">
+<testcase name="Homepage API Tests › should load the homepage" classname="test\home.spec.js" time="5.923">
+</testcase>
+<testcase name="Homepage API Tests › should display correct Hero section content" classname="test\home.spec.js" time="3.193">
+</testcase>
+</testsuite>
+<testsuite name="test\auth.spec.js" timestamp="2025-03-02T08:49:33.133Z" hostname="firefox" tests="2" failures="0" skipped="0" time="9.123" errors="0">
+<testcase name="Authentication Tests › should display all input fields and Create button" classname="test\auth.spec.js" time="6.098">
+</testcase>
+<testcase name="Authentication Tests › should display all input fields and Login button" classname="test\auth.spec.js" time="3.025">
+</testcase>
+</testsuite>
+<testsuite name="test\home.spec.js" timestamp="2025-03-02T08:49:33.133Z" hostname="firefox" tests="2" failures="0" skipped="0" time="8.659" errors="0">
+<testcase name="Homepage API Tests › should load the homepage" classname="test\home.spec.js" time="5.315">
+</testcase>
+<testcase name="Homepage API Tests › should display correct Hero section content" classname="test\home.spec.js" time="3.344">
+</testcase>
+</testsuite>
+<testsuite name="test\auth.spec.js" timestamp="2025-03-02T08:49:33.133Z" hostname="webkit" tests="2" failures="0" skipped="0" time="4.222" errors="0">
+<testcase name="Authentication Tests › should display all input fields and Create button" classname="test\auth.spec.js" time="2.437">
+</testcase>
+<testcase name="Authentication Tests › should display all input fields and Login button" classname="test\auth.spec.js" time="1.785">
+</testcase>
+</testsuite>
+<testsuite name="test\home.spec.js" timestamp="2025-03-02T08:49:33.133Z" hostname="webkit" tests="2" failures="0" skipped="0" time="4.075" errors="0">
+<testcase name="Homepage API Tests › should load the homepage" classname="test\home.spec.js" time="2.075">
+</testcase>
+<testcase name="Homepage API Tests › should display correct Hero section content" classname="test\home.spec.js" time="2">
+</testcase>
+</testsuite>
+</testsuites>
